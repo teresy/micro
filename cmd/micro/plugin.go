@@ -77,9 +77,7 @@ func LuaFunctionMouseBinding(function string) func(*View, bool, *tcell.EventMous
 
 func unpack(old []string) []interface{} {
 	new := make([]interface{}, len(old))
-	for i, v := range old {
-		new[i] = v
-	}
+	copy(new, old)
 	return new
 }
 
